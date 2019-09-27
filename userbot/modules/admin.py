@@ -140,7 +140,7 @@ async def promote(promt):
     try:
         await promt.client(
             EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Promoted Successfully! Now gib Party`")
+        await promt.edit("`Promoted Successfully!`")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
@@ -196,7 +196,7 @@ async def demote(dmod):
     except BadRequestError:
         await dmod.edit(NO_PERM)
         return
-    await dmod.edit("`Demoted this retard Successfully!`")
+    await dmod.edit("`Demoted Successfully!`")
 
     # Announce to the logging group if we have demoted successfully
     if BOTLOG:
@@ -756,7 +756,7 @@ async def get_user_from_event(event):
     """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(' ', 1)
     extra = None
-    if event.reply_to_msg_id:
+    if event.reply_to_msg_id and not len(args) == 2:
         previous_message = await event.get_reply_message()
         user_obj = await event.client.get_entity(previous_message.from_id)
         extra = event.pattern_match.group(1)
