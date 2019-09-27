@@ -155,6 +155,6 @@ CMD_HELP.update({
     "heart": "Try and you'll get your emotions back"
 })
 CMD_HELP.update({
-    "": "Faking orgasm"
+    "fap": "Faking orgasm"
 })
 
