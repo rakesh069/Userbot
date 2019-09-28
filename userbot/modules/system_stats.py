@@ -74,7 +74,7 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Shame that you don't have git, You're running 4.0 - 'Extended' anyway"
+            "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
         )
 
 
@@ -127,10 +127,10 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("`"
-                     "I iz behind you master !! \n\n"
+                     "Sar,I'm Alive!:D\n\n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
-                     f"Owner: Spyder #DerpGang"
+                     f"Owner: {DEFAULTUSER}"
                      "`")
 
 
